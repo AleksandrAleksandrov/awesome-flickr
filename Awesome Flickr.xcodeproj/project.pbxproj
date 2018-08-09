@@ -12,6 +12,7 @@
 		1F897C66211C7AB000A807E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F897C64211C7AB000A807E5 /* Main.storyboard */; };
 		1F897C68211C7AB100A807E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F897C67211C7AB100A807E5 /* Assets.xcassets */; };
 		1F897C6B211C7AB100A807E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F897C69211C7AB100A807E5 /* LaunchScreen.storyboard */; };
+		A346A40A5DCBF9D3F21C0397 /* Pods_Awesome_Flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3399744D61358650EB69FE /* Pods_Awesome_Flickr.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,9 @@
 		1F897C67211C7AB100A807E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F897C6A211C7AB100A807E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F897C6C211C7AB100A807E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D3399744D61358650EB69FE /* Pods_Awesome_Flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesome_Flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BC4B04262715116C6427106F /* Pods-Awesome Flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome Flickr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome Flickr/Pods-Awesome Flickr.debug.xcconfig"; sourceTree = "<group>"; };
+		D7740CB16927E7C0BEECF386 /* Pods-Awesome Flickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome Flickr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome Flickr/Pods-Awesome Flickr.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +33,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A346A40A5DCBF9D3F21C0397 /* Pods_Awesome_Flickr.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BEA33136FF34870C88093F3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BC4B04262715116C6427106F /* Pods-Awesome Flickr.debug.xcconfig */,
+				D7740CB16927E7C0BEECF386 /* Pods-Awesome Flickr.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		1F897C54211C7AB000A807E5 = {
 			isa = PBXGroup;
 			children = (
 				1F897C5F211C7AB000A807E5 /* Awesome Flickr */,
 				1F897C5E211C7AB000A807E5 /* Products */,
+				0BEA33136FF34870C88093F3 /* Pods */,
+				27CDE3F70CB7B3FB6CDBB122 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,6 +80,14 @@
 			path = "Awesome Flickr";
 			sourceTree = "<group>";
 		};
+		27CDE3F70CB7B3FB6CDBB122 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D3399744D61358650EB69FE /* Pods_Awesome_Flickr.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,9 +95,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1F897C6F211C7AB100A807E5 /* Build configuration list for PBXNativeTarget "Awesome Flickr" */;
 			buildPhases = (
+				9C1D3C2397DDA24F8606B523 /* [CP] Check Pods Manifest.lock */,
 				1F897C59211C7AB000A807E5 /* Sources */,
 				1F897C5A211C7AB000A807E5 /* Frameworks */,
 				1F897C5B211C7AB000A807E5 /* Resources */,
+				1EE141BC159610F3B29D1042 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +155,47 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1EE141BC159610F3B29D1042 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Awesome Flickr/Pods-Awesome Flickr-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Awesome Flickr/Pods-Awesome Flickr-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C1D3C2397DDA24F8606B523 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Awesome Flickr-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1F897C59211C7AB000A807E5 /* Sources */ = {
@@ -278,6 +345,7 @@
 		};
 		1F897C70211C7AB100A807E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BC4B04262715116C6427106F /* Pods-Awesome Flickr.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -296,6 +364,7 @@
 		};
 		1F897C71211C7AB100A807E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7740CB16927E7C0BEECF386 /* Pods-Awesome Flickr.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
