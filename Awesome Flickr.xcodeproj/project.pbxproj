@@ -12,6 +12,7 @@
 		1F897C66211C7AB000A807E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F897C64211C7AB000A807E5 /* Main.storyboard */; };
 		1F897C68211C7AB100A807E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F897C67211C7AB100A807E5 /* Assets.xcassets */; };
 		1F897C6B211C7AB100A807E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F897C69211C7AB100A807E5 /* LaunchScreen.storyboard */; };
+		1F897C74211C85F500A807E5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F897C73211C85F500A807E5 /* Post.swift */; };
 		A346A40A5DCBF9D3F21C0397 /* Pods_Awesome_Flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3399744D61358650EB69FE /* Pods_Awesome_Flickr.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		1F897C67211C7AB100A807E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F897C6A211C7AB100A807E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F897C6C211C7AB100A807E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F897C73211C85F500A807E5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		4D3399744D61358650EB69FE /* Pods_Awesome_Flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesome_Flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4B04262715116C6427106F /* Pods-Awesome Flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome Flickr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome Flickr/Pods-Awesome Flickr.debug.xcconfig"; sourceTree = "<group>"; };
 		D7740CB16927E7C0BEECF386 /* Pods-Awesome Flickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome Flickr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome Flickr/Pods-Awesome Flickr.release.xcconfig"; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 		1F897C5F211C7AB000A807E5 /* Awesome Flickr */ = {
 			isa = PBXGroup;
 			children = (
+				1F897C72211C85C300A807E5 /* Model */,
 				1F897C60211C7AB000A807E5 /* AppDelegate.swift */,
 				1F897C62211C7AB000A807E5 /* ViewController.swift */,
 				1F897C64211C7AB000A807E5 /* Main.storyboard */,
@@ -78,6 +81,14 @@
 				1F897C6C211C7AB100A807E5 /* Info.plist */,
 			);
 			path = "Awesome Flickr";
+			sourceTree = "<group>";
+		};
+		1F897C72211C85C300A807E5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1F897C73211C85F500A807E5 /* Post.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		27CDE3F70CB7B3FB6CDBB122 /* Frameworks */ = {
@@ -202,6 +213,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F897C74211C85F500A807E5 /* Post.swift in Sources */,
 				1F897C63211C7AB000A807E5 /* ViewController.swift in Sources */,
 				1F897C61211C7AB000A807E5 /* AppDelegate.swift in Sources */,
 			);

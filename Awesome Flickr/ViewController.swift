@@ -8,12 +8,15 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
+import Foundation
 
-class ViewController: UIViewController {
+class ViewController: UITableViewController {
     
     let FLICK_URL = "https://api.flickr.com/services/rest/"
     let APP_KEY = "35128e160dd7c7c214715a5634434907"
-
+    var itemArray: [Post] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         fetchPosts()
@@ -31,11 +34,39 @@ class ViewController: UIViewController {
         Alamofire.request(FLICK_URL, method: .get, parameters: params).responseJSON {
             response in
             if response.result.isSuccess {
-                print(response)
+                let postsJSON : JSON = JSON(response.result.value!)
+                let posts = postsJSON["photos"]["photo"].array
+
+                for item in posts! {
+                    let post: Post = Post()
+                    post.title = item["title"].stringValue
+                    post.url_s = item["url_s"].stringValue
+                    self.itemArray.append(post)
+                }
+                self.tableView.reloadData()
             } else {
                 print("faile")
             }
         }
     }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+        if itemArray.count != 0 {
+            let post = itemArray[indexPath.row]
+            cell.textLabel?.text = post.title
+        } else {
+            cell.textLabel?.text = "empty"
+        }
+        return cell
+    }
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if itemArray.count == 0 {
+            return 1
+        } else {
+            return itemArray.count
+        }
+    }
+
 }
 
