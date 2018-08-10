@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import AlamofireImage
 import SwiftyJSON
 import Foundation
 
@@ -19,6 +20,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 350
         fetchPosts()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -51,12 +54,25 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostCell", for: indexPath) as! PostTableViewCell
         if itemArray.count != 0 {
             let post = itemArray[indexPath.row]
-            cell.textLabel?.text = post.title
+            cell.labelTitle.text = post.title
+            if post.url_s != "" {
+                let url = URL(string: post.url_s)
+                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+                cell.imagePost.image = UIImage(data: data!)
+            } else {
+                cell.imagePost.image = nil
+            }
+            
+//            Alamofire.request(post.url_s).responseImage { response in
+//                if let image = response.result.value {
+//                    cell.imagePost.image = image
+//                }
+//            }
         } else {
-            cell.textLabel?.text = "empty"
+            cell.labelTitle?.text = "empty"
         }
         return cell
     }

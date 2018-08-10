@@ -18,13 +18,38 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" id="8m2-PM-5iZ">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="350" id="8m2-PM-5iZ" customClass="PostTableViewCell" customModule="Awesome_Flickr" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="350"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8m2-PM-5iZ" id="46q-ED-Pyd">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="349"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrx-8e-NRX">
+                                            <rect key="frame" x="0.0" y="318.5" width="375" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EP4-p4-Ywj">
+                                            <rect key="frame" x="1" y="1" width="374" height="311"/>
+                                        </imageView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lrx-8e-NRX" firstAttribute="top" secondItem="EP4-p4-Ywj" secondAttribute="bottom" constant="8" id="0zC-ZZ-d1J"/>
+                                        <constraint firstItem="EP4-p4-Ywj" firstAttribute="top" secondItem="46q-ED-Pyd" secondAttribute="top" id="7Lt-TO-SRi"/>
+                                        <constraint firstItem="lrx-8e-NRX" firstAttribute="leading" secondItem="46q-ED-Pyd" secondAttribute="leading" id="GMO-On-BaS"/>
+                                        <constraint firstAttribute="trailing" secondItem="EP4-p4-Ywj" secondAttribute="trailing" id="XnE-OP-9Za"/>
+                                        <constraint firstAttribute="trailing" secondItem="lrx-8e-NRX" secondAttribute="trailing" id="YRk-27-VT1"/>
+                                        <constraint firstItem="lrx-8e-NRX" firstAttribute="top" secondItem="EP4-p4-Ywj" secondAttribute="bottom" constant="8" id="dAN-2T-wl3"/>
+                                        <constraint firstAttribute="bottom" secondItem="lrx-8e-NRX" secondAttribute="bottom" constant="10" id="wGn-7b-Qop"/>
+                                        <constraint firstItem="EP4-p4-Ywj" firstAttribute="leading" secondItem="46q-ED-Pyd" secondAttribute="leading" id="xVa-7U-g8O"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imagePost" destination="EP4-p4-Ywj" id="R6u-Is-QjR"/>
+                                    <outlet property="labelTitle" destination="lrx-8e-NRX" id="jjR-Yx-HM8"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                     </tableView>
@@ -32,7 +57,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="932" y="-585"/>
+            <point key="canvasLocation" x="932" y="-585.1574212893554"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sck-2x-FZc">

@@ -9,5 +9,6 @@ target 'Awesome Flickr' do
 
   pod 'SwiftyJSON'
   pod 'Alamofire'
+  pod 'AlamofireImage'
 
 end
