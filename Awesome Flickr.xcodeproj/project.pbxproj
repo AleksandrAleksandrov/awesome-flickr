@@ -14,6 +14,8 @@
 		1F897C6B211C7AB100A807E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F897C69211C7AB100A807E5 /* LaunchScreen.storyboard */; };
 		1F897C74211C85F500A807E5 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F897C73211C85F500A807E5 /* Post.swift */; };
 		1F897C78211D768A00A807E5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F897C77211D768A00A807E5 /* PostTableViewCell.swift */; };
+		1F897C7A211F0AE100A807E5 /* BaseResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F897C79211F0AE100A807E5 /* BaseResponseModel.swift */; };
+		1F897C7C211F11A800A807E5 /* Photos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F897C7B211F11A800A807E5 /* Photos.swift */; };
 		A346A40A5DCBF9D3F21C0397 /* Pods_Awesome_Flickr.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D3399744D61358650EB69FE /* Pods_Awesome_Flickr.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +29,8 @@
 		1F897C6C211C7AB100A807E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1F897C73211C85F500A807E5 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		1F897C77211D768A00A807E5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		1F897C79211F0AE100A807E5 /* BaseResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResponseModel.swift; sourceTree = "<group>"; };
+		1F897C7B211F11A800A807E5 /* Photos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photos.swift; sourceTree = "<group>"; };
 		4D3399744D61358650EB69FE /* Pods_Awesome_Flickr.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesome_Flickr.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC4B04262715116C6427106F /* Pods-Awesome Flickr.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome Flickr.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome Flickr/Pods-Awesome Flickr.debug.xcconfig"; sourceTree = "<group>"; };
 		D7740CB16927E7C0BEECF386 /* Pods-Awesome Flickr.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesome Flickr.release.xcconfig"; path = "Pods/Target Support Files/Pods-Awesome Flickr/Pods-Awesome Flickr.release.xcconfig"; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				1F897C73211C85F500A807E5 /* Post.swift */,
+				1F897C79211F0AE100A807E5 /* BaseResponseModel.swift */,
+				1F897C7B211F11A800A807E5 /* Photos.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -180,13 +186,17 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Awesome Flickr/Pods-Awesome Flickr-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+				"${BUILT_PRODUCTS_DIR}/Unbox/Unbox.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Unbox.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -218,7 +228,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F897C7C211F11A800A807E5 /* Photos.swift in Sources */,
 				1F897C74211C85F500A807E5 /* Post.swift in Sources */,
+				1F897C7A211F0AE100A807E5 /* BaseResponseModel.swift in Sources */,
 				1F897C63211C7AB000A807E5 /* ViewController.swift in Sources */,
 				1F897C61211C7AB000A807E5 /* AppDelegate.swift in Sources */,
 				1F897C78211D768A00A807E5 /* PostTableViewCell.swift in Sources */,

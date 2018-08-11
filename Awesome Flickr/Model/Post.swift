@@ -7,8 +7,16 @@
 //
 
 import Foundation
+import Unbox
 
-class Post {
-    var title: String = ""
-    var url_s: String = ""
+struct Post {
+    var title: String?
+    var url_s: String?
+}
+
+extension Post: Unboxable {
+    init(unboxer: Unboxer) throws {
+        self.title = try unboxer.unbox(key: "title")
+        self.url_s = try unboxer.unbox(key: "url_s")
+    }
 }

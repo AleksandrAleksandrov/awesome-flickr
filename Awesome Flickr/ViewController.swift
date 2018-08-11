@@ -11,6 +11,8 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 import Foundation
+import ObjectMapper
+import Unbox
 
 class ViewController: UITableViewController {
     
@@ -20,8 +22,8 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 350
+//        tableView.rowHeight = UITableViewAutomaticDimension
+//        tableView.estimatedRowHeight = 350
         fetchPosts()
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -37,16 +39,15 @@ class ViewController: UITableViewController {
         Alamofire.request(FLICK_URL, method: .get, parameters: params).responseJSON {
             response in
             if response.result.isSuccess {
-                let postsJSON : JSON = JSON(response.result.value!)
-                let posts = postsJSON["photos"]["photo"].array
 
-                for item in posts! {
-                    let post: Post = Post()
-                    post.title = item["title"].stringValue
-                    post.url_s = item["url_s"].stringValue
-                    self.itemArray.append(post)
+                do {
+                    let baseResponse: BaseResponseModel = try unbox(data: response.data!)
+//                    print("Response: \(baseResponse.photos.photosArray[0].title)")
+                    self.itemArray = baseResponse.photos.photosArray
+                    self.tableView.reloadData()
+                } catch {
+                    print("error while parsing \(error)")
                 }
-                self.tableView.reloadData()
             } else {
                 print("faile")
             }
@@ -58,19 +59,30 @@ class ViewController: UITableViewController {
         if itemArray.count != 0 {
             let post = itemArray[indexPath.row]
             cell.labelTitle.text = post.title
-            if post.url_s != "" {
-                let url = URL(string: post.url_s)
-                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
-                cell.imagePost.image = UIImage(data: data!)
+//            if post.url_s != "" {
+//                let url = URL(string: post.url_s)
+//                let data = try? Data(contentsOf: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check / try-catch
+//                cell.imagePost.image = UIImage(data: data!)
+//            } else {
+//                cell.imagePost.image = nil
+//            }
+            if post.url_s != nil {
+                Alamofire.request(post.url_s!).responseImage { response in
+                    if response.error == nil {
+                        cell.imagePost.image = nil
+                        
+                    }
+                    
+                    if let image = response.result.value {
+                        cell.imagePost.image = image
+                    } else {
+                        cell.imagePost.image = nil
+                    }
+                }
             } else {
                 cell.imagePost.image = nil
             }
             
-//            Alamofire.request(post.url_s).responseImage { response in
-//                if let image = response.result.value {
-//                    cell.imagePost.image = image
-//                }
-//            }
         } else {
             cell.labelTitle?.text = "empty"
         }
