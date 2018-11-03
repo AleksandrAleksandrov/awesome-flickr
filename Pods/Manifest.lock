@@ -1,17 +1,17 @@
 PODS:
-  - Alamofire (4.6.0)
-  - AlamofireImage (3.3.0):
-    - Alamofire (~> 4.5)
-  - ObjectMapper (3.1.0)
-  - SwiftyJSON (4.0.0)
-  - Unbox (2.5.0)
+  - Alamofire (4.7.3)
+  - AlamofireImage (3.4.1):
+    - Alamofire (~> 4.7)
+  - ObjectMapper (3.3.0)
+  - SwiftyJSON (4.2.0)
+  - Unbox (3.0.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - AlamofireImage
-  - ObjectMapper
-  - SwiftyJSON
-  - Unbox
+  - Alamofire (~> 4.7.3)
+  - AlamofireImage (~> 3.4.1)
+  - ObjectMapper (~> 3.3.0)
+  - SwiftyJSON (~> 4.2.0)
+  - Unbox (~> 3.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -22,12 +22,12 @@ SPEC REPOS:
     - Unbox
 
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
-  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
-  SwiftyJSON: 070dabdcb1beb81b247c65ffa3a79dbbfb3b48aa
-  Unbox: 30e437e6151a6de16139375fd4e8dd9a664cfbf7
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
+  AlamofireImage: 78d67ccbb763d87ba44b21583d2153500a195630
+  ObjectMapper: b612bf8c8e99c4dc0bb6013a51f7c27966ed5da9
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
+  Unbox: 9ed33b2a31f7a8a049f54b94d40c4a52a28c4d9d
 
-PODFILE CHECKSUM: fe108026ba52b687e209c7b4174c6e5122b9d328
+PODFILE CHECKSUM: 455f8af650ecd88f356881f7850ab54ce5c4fe96
 
 COCOAPODS: 1.5.3

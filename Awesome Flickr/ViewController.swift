@@ -11,7 +11,7 @@ import Alamofire
 import AlamofireImage
 import SwiftyJSON
 import Foundation
-import ObjectMapper
+//import ObjectMapper
 import Unbox
 
 class ViewController: UITableViewController {

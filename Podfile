@@ -7,10 +7,10 @@ target 'Awesome Flickr' do
 
   # Pods for Awesome Flickr
 
-  pod 'SwiftyJSON'
-  pod 'Alamofire'
-  pod 'AlamofireImage'
-  pod 'ObjectMapper'
-  pod 'Unbox'
+  pod 'SwiftyJSON', '~> 4.2.0'
+  pod 'Alamofire', '~> 4.7.3'
+  pod 'AlamofireImage', '~> 3.4.1'
+  pod 'Unbox', '~> 3.0.0'
+  pod 'ObjectMapper', '~> 3.3.0'
 
 end
